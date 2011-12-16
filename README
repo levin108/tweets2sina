@@ -1,0 +1,15 @@
+使用方法
+
+1.下载源代码： hg clone https://tweets2sina.googlecode.com/hg/ tweets2sina cd tweets2sina
+
+2.申请API。在http://open.t.sina.com.cn/apps 处点击创建应用，创建一个新的微博应用，获取对应的App Key和APP Secret.
+
+3.修改cfg.py文件，将sina_consumer_key和sina_consumer_secret分别设置为刚刚获取到App Key和App Secret.
+
+4.进行新浪微博OAuth认证:
+
+python auth.py，将命令行输入的URL放入浏览器中获取PIN码，把该PIN码填入终端提示中，获取Access Key和Access Secret.
+
+5.修改cfg.py文件，将sina_access_token_key和sina_access_token_secret的值分别设为刚刚获取到的Access Key和Access Secret. screen_name设为要同步的Twitter用户名，log_directory建议设成当前目录的绝对路径，绝不能留空，而且必须是有效地址。 如果不使用http代理，则http_proxy_host和http_proxy_port留空。
+
+6.运行python sync.py，同步开始。 
